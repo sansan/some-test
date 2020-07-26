@@ -37,3 +37,14 @@ const asyncWeather = async (logn, lat) => {
 
 printWeather(51.5074, 0.1278);
 asyncWeather(51.5074, 0.1278);
+
+// Section 2 - Question 3
+const printWeatherCurrency = (city) => {
+    Promise.all([Provider.getWeather(city), Provider.getLocalCurrency(city)])
+        .then(([weather, currency]) => {
+            console.log(weather);
+            console.log(currency);
+        });
+}
+
+printWeatherCurrency('London');
