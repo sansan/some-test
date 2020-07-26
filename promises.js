@@ -16,3 +16,5 @@ Provider.findCity(51.5074, 0.1278)
     .then((city) => console.log(city))
     .catch((e) => console.log(e));
 
+// async/await provides better readability
+console.log(await Provider.findCity(51.5074, 0.1278));
