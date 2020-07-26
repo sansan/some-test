@@ -12,9 +12,28 @@ class Provider {
     };
 }
 
+// Section 2 - Question 1
 Provider.findCity(51.5074, 0.1278)
     .then((city) => console.log(city))
     .catch((e) => console.log(e));
 
 // async/await provides better readability
-console.log(await Provider.findCity(51.5074, 0.1278));
+const findCity = async(long, lat) => await Provider.findCity(51.5074, 0.1278);
+console.log(await findCity(51.5074, 0.1278));
+
+// Section 2 - Question 2
+const printWeather = (long, lat) => {
+    Provider.findCity(long, lat).then((city) => {
+        Provider.getWeather(city).then((weather) => console.log(weather));
+    });
+}
+
+const asyncWeather = async (logn, lat) => {
+    const city = await findCity(logn, lat); 
+    const weather = await Provider.getWeather(city);
+
+    console.log(weather);
+}
+
+printWeather(51.5074, 0.1278);
+asyncWeather(51.5074, 0.1278);
