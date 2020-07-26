@@ -1,5 +1,7 @@
 let arr = [1,2,3,4];
 
-arr.forEach(value => {
+arr.forEach((value) => {
     console.log(value);
 });
+
+arr = arr.map((value) => value * 2);
