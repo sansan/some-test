@@ -5,3 +5,7 @@ arr.forEach((value) => {
 });
 
 arr = arr.map((value) => value * 2);
+
+const isEven = (value) => value % 2 === 0;
+
+const evenValues = arr.filter((value) => isEven(value));
